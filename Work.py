@@ -15,9 +15,15 @@ def start():
     with open('new_file.json', 'w') as f:
         print("The json file is created")
 
-def writing(phone_book):
+def writing(i):
     with open('new_file.json', 'w', encoding='utf-8') as fp:
-       fp.write(json.dumps(phone_book, ensure_ascii=False))
+       fp.write(json.dumps(i, ensure_ascii=False))
+
+def conclusion(ttt):
+    with open('new_file.json', 'r', encoding='utf-8') as fp:
+        ttt = json.load(fp)
+    return ttt
+    
 
 action = None
 while action != 'q':
@@ -28,4 +34,6 @@ while action != 'q':
         start()
     elif action == '3':
         writing(phone_book)
+    elif action == '4':
+        conclusion(phone_book)
 
