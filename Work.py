@@ -1,5 +1,6 @@
 import json
 
+change = 'Enter command: 1 - read & show | w - Quit\n'
 welcome = 'Enter command: 1 - read & show | q - Quit\n'
 phone_book = {'Миша гараж':{'phone': ['722333335','72627397543'] , 'birthday': '11-02-2010', 'email':"mail@mail.ru"},
 'Sasha':{'phone': ['78436840045','77554802591']}}
@@ -22,7 +23,7 @@ def writing(i):
 def conclusion(ttt):
     with open('new_file.json', 'r', encoding='utf-8') as fp:
         ttt = json.load(fp)
-    return ttt
+        return(ttt)
     
 
 action = None
@@ -36,4 +37,11 @@ while action != 'q':
         writing(phone_book)
     elif action == '4':
         conclusion(phone_book)
+        print(phone_book)
+    elif action == '5':
+        action1 = None
+        while action1 != 'w':
+            action1 = input(f'{change}').lower()
+            if action1 == '1':
+
 
