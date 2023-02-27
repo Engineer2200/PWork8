@@ -1,8 +1,7 @@
 import json
 
 welcome = 'Enter command: 1 - read & show | q - Quit\n'
-phone_book = {
-'Миша гараж':{'phone': ['722333335','72627397543'] , 'birthday': '11-02-2010', 'email':"mail@mail.ru"},
+phone_book = {'Миша гараж':{'phone': ['722333335','72627397543'] , 'birthday': '11-02-2010', 'email':"mail@mail.ru"},
 'Sasha':{'phone': ['78436840045','77554802591']}}
 def print_book(book):
     for k,v in book.items():
@@ -16,9 +15,9 @@ def start():
     with open('new_file.json', 'w') as f:
         print("The json file is created")
 
-def writing():
-    with open('new_file.json', 'w') as fp:
-        json.dump(phone_book, fp)
+def writing(BD):
+    with open('new_file.json', 'w', encoding='utf-8') as fp:
+       fp.write(json.dumps(BD, ensure_ascii=False))
 
 action = None
 while action != 'q':
@@ -30,3 +29,6 @@ while action != 'q':
     elif action == '3':
         writing()
 
+with open(path, 'w', encoding='utf-8') as fh: # открываем файл на запись
+fh.write(json.dumps(BD, ensure_ascii=False)) # преобразовываем словарь data в unicode-строку и записываем в файл
+print('БД успещно сохранена')
