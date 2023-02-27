@@ -27,4 +27,6 @@ while action != 'q':
         print_book(phone_book)
     elif action == '2':
         start()
+    elif action == '3':
+        writing()
 
