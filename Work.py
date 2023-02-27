@@ -29,6 +29,3 @@ while action != 'q':
     elif action == '3':
         writing()
 
-with open(path, 'w', encoding='utf-8') as fh: # открываем файл на запись
-fh.write(json.dumps(BD, ensure_ascii=False)) # преобразовываем словарь data в unicode-строку и записываем в файл
-print('БД успещно сохранена')
