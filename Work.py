@@ -16,6 +16,10 @@ def start():
     with open('new_file.json', 'w') as f:
         print("The json file is created")
 
+def writing():
+    with open('new_file.json', 'w') as fp:
+        json.dump(phone_book, fp)
+
 action = None
 while action != 'q':
     action = input(f'{welcome}').lower()
