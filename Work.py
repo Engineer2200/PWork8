@@ -1,3 +1,4 @@
+import json
 
 welcome = 'Enter command: 1 - read & show | q - Quit\n'
 phone_book = {
@@ -10,10 +11,16 @@ def print_book(book):
             print (i, j, end = " | ")
         print()
 
+
+def start():
+    with open('new_file.json', 'w') as f:
+        print("The json file is created")
+
 action = None
 while action != 'q':
     action = input(f'{welcome}').lower()
     if action == '1':
         print_book(phone_book)
-
+    elif action == '2':
+        start()
 
