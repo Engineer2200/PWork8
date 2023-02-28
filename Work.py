@@ -26,20 +26,25 @@ def conclusion(ttt):
         return(ttt)
 
 def search(phone_book):
-    temp = []
     found = False
     search_name = input('Введите имя контакта:')
     full_search = search_name.capitalize()
-    print(full_search)
-    for string in phone_book:
-        if full_search in string:
-            temp.append(string)
+    for k in phone_book:
+        if full_search == k:
             found = True
+            print(k)
     if found == True:
-        print(temp)
+        print((k) and (phone_book[full_search]))
     else:
-        print('eurf')
-
+        print('Нет контакта')
+    
+def new_record(book):
+    k=input("Put new name : ")
+    a={}
+    a['phone']=list(input('Put phone : ').split())
+    a['birthday']=input('Put birthday : ')
+    a['email']=input('Put email : ')
+    book[k]=a
 
 action = None
 while action != 'q':
@@ -55,8 +60,7 @@ while action != 'q':
         print(phone_book)
     elif action == '5':
         search(phone_book)
-        # action1 = None
-        # while action1 != 'w':
-        #     action1 = input(f'{change}').lower()
-        #     if action1 == '1':
+    elif action == '6':
+        new_record(phone_book)
+
                 
