@@ -24,7 +24,22 @@ def conclusion(ttt):
     with open('new_file.json', 'r', encoding='utf-8') as fp:
         ttt = json.load(fp)
         return(ttt)
-    
+
+def search(phone_book):
+    temp = []
+    found = False
+    search_name = input('Введите имя контакта:')
+    full_search = search_name.capitalize()
+    print(full_search)
+    for string in phone_book:
+        if full_search in string:
+            temp.append(string)
+            found = True
+    if found == True:
+        print(temp)
+    else:
+        print('eurf')
+
 
 action = None
 while action != 'q':
@@ -39,9 +54,9 @@ while action != 'q':
         conclusion(phone_book)
         print(phone_book)
     elif action == '5':
-        action1 = None
-        while action1 != 'w':
-            action1 = input(f'{change}').lower()
-            if action1 == '1':
-
-
+        search(phone_book)
+        # action1 = None
+        # while action1 != 'w':
+        #     action1 = input(f'{change}').lower()
+        #     if action1 == '1':
+                
