@@ -45,6 +45,22 @@ def new_record(book):
     a['birthday']=input('Put birthday : ')
     a['email']=input('Put email : ')
     book[k]=a
+    writing(phone_book)
+    conclusion(phone_book)
+
+# def red(x):
+#     found = False
+#     search_name = input('Введите имя контакта:')
+#     full_search = search_name.capitalize()
+#     for k in phone_book:
+#         if full_search == k:
+#             found = True
+#         if found == True:
+#                 ti = input('введите верное имя:')
+#                 k = ti
+#         else:
+#             print('Нет контакта')
+#     conclusion(phone_book)    
 
 action = None
 while action != 'q':
@@ -62,5 +78,8 @@ while action != 'q':
         search(phone_book)
     elif action == '6':
         new_record(phone_book)
+    # elif action == '7':
+    #     red(phone_book)
+
 
                 
