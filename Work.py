@@ -55,11 +55,11 @@ def red(x):
     for k in phone_book:
         if full_search == k:
             found = True
-        if found == True:
-                ti = input('введите верное имя:')
-                k = ti
-        else:
-            print('Нет контакта')
+    if found == True:
+        ti = input('введите верное имя:')
+        k = ti
+    else:
+        print('Нет контакта')
     writing(phone_book)
     conclusion(phone_book)    
 
