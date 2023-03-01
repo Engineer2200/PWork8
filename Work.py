@@ -48,38 +48,39 @@ def new_record(book):
     writing(phone_book)
     conclusion(phone_book)
 
-# def red(x):
-#     found = False
-#     search_name = input('Введите имя контакта:')
-#     full_search = search_name.capitalize()
-#     for k in phone_book:
-#         if full_search == k:
-#             found = True
-#         if found == True:
-#                 ti = input('введите верное имя:')
-#                 k = ti
-#         else:
-#             print('Нет контакта')
-#     conclusion(phone_book)    
+def red(x):
+    found = False
+    search_name = input('Введите имя контакта:')
+    full_search = search_name.capitalize()
+    for k in phone_book:
+        if full_search == k:
+            found = True
+        if found == True:
+                ti = input('введите верное имя:')
+                k = ti
+        else:
+            print('Нет контакта')
+    writing(phone_book)
+    conclusion(phone_book)    
 
 action = None
 while action != 'q':
     action = input(f'{welcome}').lower()
     if action == '1':
-        print_book(phone_book)
+        print_book(phone_book) 
     elif action == '2':
-        start()
+        start() # создание пустого фала, либо его обнуление 
     elif action == '3':
-        writing(phone_book)
+        writing(phone_book) # запись в файл нашего словаря 
     elif action == '4':
         conclusion(phone_book)
-        print(phone_book)
+        print(phone_book) # файл = списку
     elif action == '5':
-        search(phone_book)
+        search(phone_book) # поиск контакта
     elif action == '6':
-        new_record(phone_book)
-    # elif action == '7':
-    #     red(phone_book)
+        new_record(phone_book) # добавление нового контакта 
+    elif action == '7':
+        red(phone_book) #
 
 
                 
