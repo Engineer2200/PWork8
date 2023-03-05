@@ -50,9 +50,8 @@ def new_record(book):
 
 def editing(book):
     search_name = input('Введите имя контакта:')
-    full_search = search_name.capitalize()
     for k in phone_book:
-        if full_search == k:
+        if search_name == k:
             a={}
             a['phone']=list(input('Put phone : ').split())
             a['birthday']=input('Put birthday : ')
