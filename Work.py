@@ -1,6 +1,6 @@
 import json
 
-change = 'Enter command: 1 - read & show | w - Quit\n'
+change = 'Enter command: 1 - печать нашего словаря 2 - создание пустого фала, либо его обнуление 3 - запись в файл нашего словаря 4 - файл = списку 5 - поиск контакта 6 - добавление нового контакта | w - Quit\n'
 welcome = 'Enter command: 1 - read & show | q - Quit\n'
 phone_book = {'Миша гараж':{'phone': ['722333335','72627397543'] , 'birthday': '11-02-2010', 'email':"mail@mail.ru"},
 'Sasha':{'phone': ['78436840045','77554802591']}}
@@ -48,24 +48,10 @@ def new_record(book):
     writing(phone_book)
     conclusion(phone_book)
 
-def red(x):
-    found = False
-    search_name = input('Введите имя контакта:')
-    full_search = search_name.capitalize()
-    for k in phone_book:
-        if full_search == k:
-            found = True
-    if found == True:
-        ti = input('Введите верное имя:')
-        k = ti
-    else:
-        print('Нет контакта')
-
-
 action = None
 while action != 'q':
     action = input(f'{welcome}').lower()
-    if action == '1':
+    if action == '1': # печать нашего словаря 
         print_book(phone_book) 
     elif action == '2':
         start() # создание пустого фала, либо его обнуление 
@@ -78,8 +64,7 @@ while action != 'q':
         search(phone_book) # поиск контакта
     elif action == '6':
         new_record(phone_book) # добавление нового контакта 
-    elif action == '7':
-        red(phone_book) #
+    
 
 
                 
