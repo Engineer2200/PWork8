@@ -48,6 +48,21 @@ def new_record(book):
     writing(phone_book)
     conclusion(phone_book)
 
+def editing(book):
+    search_name = input('Введите имя контакта:')
+    full_search = search_name.capitalize()
+    for k in phone_book:
+        if full_search == k:
+            a={}
+            a['phone']=list(input('Put phone : ').split())
+            a['birthday']=input('Put birthday : ')
+            a['email']=input('Put email : ')
+            book[k]=a
+        else:
+            print('Нет контакта')
+writing(phone_book)
+conclusion(phone_book)
+
 action = None
 while action != 'q':
     action = input(f'{welcome}').lower()
@@ -64,6 +79,8 @@ while action != 'q':
         search(phone_book) # поиск контакта
     elif action == '6':
         new_record(phone_book) # добавление нового контакта 
+    elif action == '7':
+        editing(phone_book) # Изменение данных контакта 
     
 
 
